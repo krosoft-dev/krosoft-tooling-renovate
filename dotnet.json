@@ -10,6 +10,10 @@
       "automerge": true
     },
     {
+      "groupName": "all Tenor.Packages packages",
+      "matchPackageNames": ["Tenor.Packages.**"]
+    },
+    {
       "groupName": "AutoMapper",
       "matchPackageNames": ["AutoMapper"],
       "enabled": false
