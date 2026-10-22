@@ -17,6 +17,40 @@
       "matchDatasources": ["nuget", "npm"],
       "matchPackageNames": ["*"],
       "allowedVersions": "!/-/"
+    },
+    {
+      "description": "Docker images pinned as X.Y.Z-alpineA.B[-suffix] (node, nginx...): also follow Alpine bumps (alpine3.20 -> alpine3.24) instead of staying on a frozen Alpine tag",
+      "groupName": "Docker alpine images",
+      "matchDatasources": ["docker"],
+      "matchCurrentValue": "/^\\d+\\.\\d+\\.\\d+-alpine\\d+\\.\\d+(-[a-z]+)?$/",
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-alpine(?<build>\\d+)\\.(?<revision>\\d+)(?<compatibility>-[a-z]+)?$"
+    },
+    {
+      "description": "Docker images pinned as X.Y-alpineA.B (dotnet aspnet/sdk...): also follow Alpine bumps, keeping the X.Y precision (no switch to X.Y.Z tags)",
+      "groupName": "Docker alpine images",
+      "matchDatasources": ["docker"],
+      "matchCurrentValue": "/^\\d+\\.\\d+-alpine\\d+\\.\\d+(-[a-z]+)?$/",
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)-alpine(?<build>\\d+)\\.(?<revision>\\d+)(?<compatibility>-[a-z]+)?$"
+    },
+    {
+      "description": ".NET Docker images: only LTS (even) majors",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["mcr.microsoft.com/dotnet/**"],
+      "allowedVersions": "/^\\d*[02468]\\./"
+    },
+    {
+      "description": "Node Docker image: keep the whole tag for versioning (cancels workarounds:nodeDockerVersioning split) and only allow LTS (even) majors",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["node"],
+      "matchCurrentValue": "/^\\d+\\.\\d+\\.\\d+-alpine\\d+\\.\\d+$/",
+      "versionCompatibility": "^(?<version>.+)$",
+      "allowedVersions": "/^\\d*[02468]\\./"
+    },
+    {
+      "description": "nginx Docker image: stable branch only (even minor, e.g. 1.30), not mainline (odd minor, e.g. 1.31)",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["nginx"],
+      "allowedVersions": "/^\\d+\\.\\d*[02468]\\./"
     }
   ]
 }
