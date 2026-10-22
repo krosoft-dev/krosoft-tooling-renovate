@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>krosoft-dev/krosoft-tooling-renovate:typeScript"],
+  "extends": ["github>krosoft-dev/krosoft-tooling-renovate:react"],
   "description": "Renovate configuration for lovable projects.",
   "packageRules": [
     {
@@ -8,17 +8,8 @@
       "matchPackagePatterns": ["^@dnd-kit/"]
     },
     {
-      "groupName": "Radix UI packages",
-      "matchPackagePatterns": ["^@radix-ui/"]
-    },
-
-    {
       "groupName": "UI Components",
-      "matchPackageNames": [
-        "@hookform/**",
-        "class-variance-authority",
-        "sonner"
-      ]
+      "matchPackageNames": ["class-variance-authority", "sonner"]
     },
     {
       "groupName": "Tiptap packages",
@@ -31,29 +22,6 @@
     {
       "groupName": "D3 packages",
       "matchPackagePatterns": ["^d3-", "^@types/d3-"]
-    },
-    {
-      "groupName": "React packages",
-      "matchPackageNames": [
-        "react",
-        "react-dom",
-        "@types/react",
-        "@types/react-dom"
-      ]
-    },
-    {
-      "groupName": "all Tanstack packages",
-      "matchPackageNames": ["@tanstack/**"]
-    },
-
-    {
-      "groupName": "Tailwind CSS packages",
-      "matchPackagePatterns": [
-        "^tailwindcss",
-        "^@tailwindcss/",
-        "tailwind-merge",
-        "tailwindcss-animate"
-      ]
     }
   ]
 }

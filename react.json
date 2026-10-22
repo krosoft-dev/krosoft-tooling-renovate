@@ -1,0 +1,59 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>krosoft-dev/krosoft-tooling-renovate:typeScript"],
+  "description": "Renovate configuration for React projects.",
+  "packageRules": [
+    {
+      "groupName": "React packages",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
+      ]
+    },
+    {
+      "groupName": "Radix UI packages",
+      "matchPackageNames": ["@radix-ui/**"]
+    },
+    {
+      "groupName": "all Tanstack packages",
+      "matchPackageNames": ["@tanstack/**"]
+    },
+    {
+      "groupName": "Form packages",
+      "matchPackageNames": ["react-hook-form", "@hookform/**", "zod"]
+    },
+    {
+      "groupName": "i18n packages",
+      "matchPackageNames": ["i18next", "i18next-**", "react-i18next"]
+    },
+    {
+      "groupName": "Storybook packages",
+      "matchPackageNames": [
+        "storybook",
+        "@storybook/**",
+        "eslint-plugin-storybook"
+      ]
+    },
+    {
+      "groupName": "React Router packages",
+      "matchPackageNames": [
+        "react-router",
+        "react-router-dom",
+        "@react-router/**"
+      ]
+    },
+    {
+      "groupName": "Tailwind CSS packages",
+      "matchPackageNames": [
+        "tailwindcss",
+        "@tailwindcss/**",
+        "tailwind-merge",
+        "tailwindcss-animate",
+        "postcss",
+        "autoprefixer"
+      ]
+    }
+  ]
+}
