@@ -4,10 +4,6 @@
   "description": "Renovate configuration for lovable projects.",
   "packageRules": [
     {
-      "groupName": "DnD Kit packages",
-      "matchPackagePatterns": ["^@dnd-kit/"]
-    },
-    {
       "groupName": "UI Components",
       "matchPackageNames": ["class-variance-authority", "sonner"]
     },

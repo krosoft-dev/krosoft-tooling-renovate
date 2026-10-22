@@ -21,6 +21,10 @@
       "matchPackageNames": ["@tanstack/**"]
     },
     {
+      "groupName": "DnD Kit packages",
+      "matchPackageNames": ["@dnd-kit/**"]
+    },
+    {
       "groupName": "Form packages",
       "matchPackageNames": ["react-hook-form", "@hookform/**", "zod"]
     },
